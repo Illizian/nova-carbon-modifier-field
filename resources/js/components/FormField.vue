@@ -161,7 +161,7 @@ export default {
             formData.append(this.field.attribute, this.modifiers.join(','));
         },
 
-        removeModifier(event, index) {
+        removeModifier(index) {
             this.modifiers = this.modifiers.filter((modifier, key) => key !== index);
         },
 
