@@ -23,4 +23,30 @@ class NovaCarbonModifier extends Field
     {
         return $this->withMeta([ 'popular' => $list ]);
     }
+
+    /**
+     * Takes a $date, and applies the Carbon modifiers defined on this model
+     *
+     * @param  \Carbon\Carbon $date
+     * @param  String $modifiers
+     * @return \Carbon\Carbon;
+     */
+    public static function applyModifier(\Carbon\Carbon $date, String $modifiers) : \Carbon\Carbon
+    {
+        return collect(explode(',', $this->modifier))
+            ->reduce(function (\Carbon\Carbon $date, String $modifier) {
+                [ $method, $param ] = explode(':', $modifier) + [ null, null ];
+
+                try {
+                    if ($param !== null) {
+                        return $date->{$method}($param);
+                    } else {
+                        return $date->{$method}();
+                    }
+                } catch(\Exception $e) {
+                    return $date;
+                }
+
+            }, $date);
+    }
 }
