@@ -56,13 +56,13 @@
                 v-for="modifiers, key in popular"
                 :key="key"
             >
-                <a href="#" class="help-text no-underline hover:underline" v-on:click="addModifiers(modifiers)">
+                <a href="#" class="help-text no-underline hover:underline" v-on:click.prevent="addModifiers(modifiers)">
                     {{ modifiers }}
                 </a>
             </li>
         </ol>
 
-        <nova-carbon-modifier-list :modifiers="modifiers" showDelete="true" @remove-modifier="removeModifier" />
+        <nova-carbon-modifier-list :modifiers="modifiers" showRemove="true" @remove-modifier="removeModifier" />
     </template>
   </default-field>
 </template>
