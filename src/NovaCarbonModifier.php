@@ -33,20 +33,19 @@ class NovaCarbonModifier extends Field
      */
     public static function applyModifier(\Carbon\Carbon $date, String $modifiers) : \Carbon\Carbon
     {
-        return collect(explode(',', $this->modifier))
-            ->reduce(function (\Carbon\Carbon $date, String $modifier) {
-                [ $method, $param ] = explode(':', $modifier) + [ null, null ];
+        return collect(explode(',', $modifiers))->reduce(function (\Carbon\Carbon $date, String $modifier) {
+            [ $method, $param ] = explode(':', $modifier) + [ null, null ];
 
-                try {
-                    if ($param !== null) {
-                        return $date->{$method}($param);
-                    } else {
-                        return $date->{$method}();
-                    }
-                } catch(\Exception $e) {
-                    return $date;
+            try {
+                if ($param !== null) {
+                    return $date->{$method}($param);
+                } else {
+                    return $date->{$method}();
                 }
+            } catch(\Exception $e) {
+                return $date;
+            }
 
-            }, $date);
+        }, $date);
     }
 }
