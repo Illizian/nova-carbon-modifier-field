@@ -1,5 +1,5 @@
 <template>
-    <ol class="mt-2 p-0">
+    <ol class="p-0">
         <li
             class="inline-block mr-2 mb-2 px-3 py-1 bg-gray-200 rounded-full text-sm font-semibold text-gray-700"
             v-for="modifier, key in modifiers"

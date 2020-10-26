@@ -1,5 +1,9 @@
 <template>
-    <nova-carbon-modifier-list :modifiers="modifiers" />
+    <panel-item :field="field">
+      <template v-slot:value>
+        <nova-carbon-modifier-list :modifiers="modifiers" />
+      </template>
+    </panel-item>
 </template>
 
 <script>

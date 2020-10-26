@@ -62,7 +62,9 @@
             </li>
         </ol>
 
-        <nova-carbon-modifier-list :modifiers="modifiers" showRemove="true" @remove-modifier="removeModifier" />
+        <div class="mt-2">
+            <nova-carbon-modifier-list :modifiers="modifiers" showRemove="true" @remove-modifier="removeModifier" />
+        </div>
     </template>
   </default-field>
 </template>
