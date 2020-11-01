@@ -17,6 +17,7 @@ class FieldServiceProvider extends ServiceProvider
     {
         Nova::serving(function (ServingNova $event) {
             Nova::script('nova-carbon-modifier', __DIR__.'/../dist/js/field.js');
+            Nova::style('nova-carbon-modifier', __DIR__.'/../dist/css/app.css');
         });
     }
 

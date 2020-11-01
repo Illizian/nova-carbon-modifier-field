@@ -1,16 +1,3 @@
-<style>
-    .form-prepend {
-        line-height: 2.25rem;
-        background-color: var(--60);
-    }
-
-    .form-prepend + .form-control.form-input.form-input-bordered {
-        box-shadow: none!important;
-        border-top-left-radius: none!important;
-        border-bottom-left-radius: none!important;
-    }
-</style>
-
 <template>
   <default-field :field="field" :errors="errors" :show-help-text="showHelpText">
     <template slot="field">
