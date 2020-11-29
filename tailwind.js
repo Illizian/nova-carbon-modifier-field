@@ -4,47 +4,7 @@
  * when applicable, changes should be copied from upstream to maintain sync
  */
 
-let colors = {
-  black: 'var(--black)',
-  transparent: 'var(--transparent)',
-  white: 'var(--white)',
-  'white-50%': 'var(--white-50)',
-  primary: 'var(--primary)',
-  'primary-dark': 'var(--primary-dark)',
-  'primary-70%': 'var(--primary-70)',
-  'primary-50%': 'var(--primary-50)',
-  'primary-30%': 'var(--primary-30)',
-  'primary-10%': 'var(--primary-10)',
-  'sidebar-icon': 'var(--sidebar-icon)',
-  logo: 'var(--logo)',
-  info: 'var(--info)',
-  danger: 'var(--danger)',
-  warning: 'var(--warning)',
-  success: 'var(--success)',
-  '90-half': 'var(--90-half)',
-  90: 'var(--90)',
-  80: 'var(--80)',
-  70: 'var(--70)',
-  60: 'var(--60)',
-  50: 'var(--50)',
-  40: 'var(--40)',
-  30: 'var(--30)',
-  20: 'var(--20)',
-  'warning-light': 'var(--warning-light)',
-  'warning-dark': 'var(--warning-dark)',
-  'success-light': 'var(--success-light)',
-  'success-dark': 'var(--success-dark)',
-  'danger-light': 'var(--danger-light)',
-  'danger-dark': 'var(--danger-dark)',
-  'info-light': 'var(--info-light)',
-  'info-dark': 'var(--info-dark)',
-}
-
-let svgFillColors = global.Object.assign({ current: 'currentColor' }, colors)
-
 module.exports = {
-  colors: colors,
-
   screens: {
     // sm: '576px',
     // md: '768px',
@@ -109,10 +69,6 @@ module.exports = {
     wide: '0.05em',
   },
 
-  textColors: colors,
-
-  backgroundColors: colors,
-
   backgroundSize: {
     auto: 'auto',
     cover: 'cover',
@@ -126,13 +82,6 @@ module.exports = {
     4: '4px',
     8: '8px',
   },
-
-  borderColors: global.Object.assign(
-    {
-      default: colors['black'],
-    },
-    colors
-  ),
 
   borderRadius: {
     none: '0',
@@ -315,8 +264,6 @@ module.exports = {
     75: '.75',
     100: '1',
   },
-
-  svgFill: svgFillColors,
 
   svgStroke: {
     current: 'currentColor',
